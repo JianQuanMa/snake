@@ -21,9 +21,19 @@ public interface Engine {
    * <p>
    * 
    * @param keypress {@code {@link ActionListener}
-   * @param food {@code int[][]}
-   * @param snake_location {@code int[][]}
+   * @param food {@code boolean[][]}
+   * @param snake_location {@code boolean[][]}
    */
-  void evolve(ActionListener keypress, int[][] food, int[][] snake_location);
+  void evolve(ActionListener keypress, boolean[][] food, boolean[][] snake_location);
+
+
+  /**
+   * This method returns a randomly generated location for a food item taking into account the
+   * location of the snake.
+   * 
+   * @param snake_location {@code boolean[][]}
+   * @return The location ({@code boolean[][]}) of a food item.
+   */
+  boolean[][] foodGenerator(boolean[][] snake_location);
 
 }

@@ -5,10 +5,17 @@ import design.Engine;
 public class SnakeEngine implements Engine {
 
   @Override
-  public void evolve(ActionListener keypress, int[][] food, int[][] snake_location) {
+  public void evolve(ActionListener keypress, boolean[][] food, boolean[][] snake_location) {
     // TODO Auto-generated method stub
 
   }
+
+  @Override
+  public boolean[][] foodGenerator(boolean[][] snake_location) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
 
 
 }
