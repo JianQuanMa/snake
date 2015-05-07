@@ -1,6 +1,6 @@
 /**
  * This package contains the design interfaces for the SNAKE game.
  * 
- * @author Anand
+ * @author adyavanapalli
  */
 package design;

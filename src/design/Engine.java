@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * This interface specifies how the snake engine runs.
  * 
- * @author Anand
+ * @author adyavanapalli
  * */
 public interface Engine {
 
@@ -35,5 +35,18 @@ public interface Engine {
    * @return The location ({@code boolean[][]}) of a food item.
    */
   boolean[][] foodGenerator(boolean[][] snake_location);
+
+  /**
+   * This method checks to see if the snake has collided with wall or itself.
+   * 
+   * <p>
+   * Collision with wall: The
+   * <p>
+   * 
+   * @param keypress {@code {@link ActionListener}
+   * @param snake_location {@code boolean[][]}
+   * 
+   */
+  boolean checkCollision(ActionListener keypress, boolean[][] snake_location);
 
 }
