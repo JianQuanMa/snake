@@ -1,6 +1,6 @@
 package design;
 
-import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 
 /**
@@ -20,11 +20,11 @@ public interface Engine {
    * tail of the snake is lengthened by 1 unit.
    * <p>
    * 
-   * @param keypress {@code {@link ActionListener}
+   * @param keypress {@code {@link KeyEvent}
    * @param food {@code boolean[][]}
    * @param snake_location {@code boolean[][]}
    */
-  void evolve(ActionListener keypress, boolean[][] food, boolean[][] snake_location);
+  void evolve(KeyEvent keypress, boolean[][] food, boolean[][] snake_location);
 
 
   /**
@@ -32,21 +32,26 @@ public interface Engine {
    * location of the snake.
    * 
    * @param snake_location {@code boolean[][]}
-   * @return The location ({@code boolean[][]}) of a food item.
+   * @return The location, {@code int[] = (x, y)}, of a food item.
    */
-  boolean[][] foodGenerator(boolean[][] snake_location);
+  int[] foodGenerator(boolean[][] snake_location);
 
   /**
    * This method checks to see if the snake has collided with wall or itself.
    * 
    * <p>
-   * Collision with wall: The
+   * <b> Collision with wall: </b> The method checks if the {@code keypress} direction takes the
+   * snake beyond the board's defined boundaries.
+   * </p>
    * <p>
+   * <b> Collision with itself: </b> The method checks if the {@code keypress} direction takes the
+   * snake into its own body.
+   * </p>
    * 
-   * @param keypress {@code {@link ActionListener}
+   * @param keypress {@code {@link KeyEvent}
    * @param snake_location {@code boolean[][]}
    * 
    */
-  boolean checkCollision(ActionListener keypress, boolean[][] snake_location);
+  boolean checkCollision(KeyEvent keypress, boolean[][] snake_location);
 
 }
